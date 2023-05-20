@@ -1,0 +1,19 @@
+ALTER TABLE Grade
+ADD CONSTRAINT FK_Grade_Student
+FOREIGN KEY (StudentID) REFERENCES Student(ID)
+
+ALTER TABLE Grade
+ADD CONSTRAINT FK_Grade_Teacher
+FOREIGN KEY (TeacherID) REFERENCES Teacher(ID)
+
+ALTER TABLE Grade 
+ADD CONSTRAINT FK_Grade_Course
+FOREIGN KEY (CourseID) REFERENCES Course(ID)
+
+ALTER TABLE GradeDetails 
+ADD CONSTRAINT FK_GradeDetails_Grade
+FOREIGN KEY (GradeID) REFERENCES Grade(ID)
+
+ALTER TABLE GradeDetails
+ADD CONSTRAINT FK_GradeDetails_AchievementType
+FOREIGN KEY (AchievementTypeID) REFERENCES AchievementType(ID)
